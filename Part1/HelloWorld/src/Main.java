@@ -1,3 +1,4 @@
+import java.text.NumberFormat;
 import java.util.Scanner;
 
 public class Main {
@@ -17,7 +18,11 @@ public class Main {
         double mortgage = principal
                 * (monthlyInterestRate * Math.pow (1+ monthlyInterestRate, numberOfPayments))
                 / (Math.pow(1+ monthlyInterestRate, numberOfPayments) -1) ;
-        System.out.println(mortgage);
+
+        String formattedMortgage = NumberFormat.getCurrencyInstance().format(mortgage);
+
+        
+        System.out.println("Mortgage: " + formattedMortgage);
 
     }
 }
